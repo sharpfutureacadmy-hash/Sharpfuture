@@ -61,73 +61,73 @@ const courses = [
 ]
 
 export function Courses() {
-  return (
-    <section id="courses" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-balance">
-            Our <span className="text-primary">Courses</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
-            Sharp Future Academy offers comprehensive courses in Animation, VFX, Gaming, Web Design, and Digital
-            Marketing designed to give you industry-relevant skills.
-          </p>
-        </div>
+  return (<></>
+    // <section id="courses" className="py-20">
+    //   <div className="container mx-auto px-4">
+    //     <div className="text-center mb-16">
+    //       <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-balance">
+    //         Our <span className="text-primary">Courses</span>
+    //       </h2>
+    //       <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
+    //         Sharp Future Academy offers comprehensive courses in Animation, VFX, Gaming, Web Design, and Digital
+    //         Marketing designed to give you industry-relevant skills.
+    //       </p>
+    //     </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courses.map((course, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
-              <div className="relative overflow-hidden">
-                <img
-                  src={course.image || "/placeholder.svg"}
-                  alt={course.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <Badge className="absolute top-4 right-4 bg-accent text-accent-foreground">{course.level}</Badge>
-              </div>
+    //     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    //       {courses.map((course, index) => (
+    //         <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
+    //           <div className="relative overflow-hidden">
+    //             <img
+    //               src={course.image || "/placeholder.svg"}
+    //               alt={course.title}
+    //               className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+    //             />
+    //             <Badge className="absolute top-4 right-4 bg-accent text-accent-foreground">{course.level}</Badge>
+    //           </div>
 
-              <CardHeader>
-                <CardTitle className="text-xl">{course.title}</CardTitle>
-                <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-1">
-                    <Clock className="h-4 w-4" />
-                    {course.duration}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Users className="h-4 w-4" />
-                    {course.students}
-                  </div>
-                </div>
-              </CardHeader>
+    //           <CardHeader>
+    //             <CardTitle className="text-xl">{course.title}</CardTitle>
+    //             <div className="flex items-center gap-4 text-sm text-muted-foreground">
+    //               <div className="flex items-center gap-1">
+    //                 <Clock className="h-4 w-4" />
+    //                 {course.duration}
+    //               </div>
+    //               <div className="flex items-center gap-1">
+    //                 <Users className="h-4 w-4" />
+    //                 {course.students}
+    //               </div>
+    //             </div>
+    //           </CardHeader>
 
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground text-sm">{course.description}</p>
+    //           <CardContent className="space-y-4">
+    //             <p className="text-muted-foreground text-sm">{course.description}</p>
 
-                <div className="flex flex-wrap gap-2">
-                  {course.highlights.map((highlight, idx) => (
-                    <Badge key={idx} variant="secondary" className="text-xs">
-                      {highlight}
-                    </Badge>
-                  ))}
-                </div>
+    //             <div className="flex flex-wrap gap-2">
+    //               {course.highlights.map((highlight, idx) => (
+    //                 <Badge key={idx} variant="secondary" className="text-xs">
+    //                   {highlight}
+    //                 </Badge>
+    //               ))}
+    //             </div>
 
-                <div className="flex gap-2 pt-4">
-                  <Button className="flex-1">Enroll Now</Button>
-                  <Button variant="outline" className="flex-1 bg-transparent">
-                    Learn More
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+    //             <div className="flex gap-2 pt-4">
+    //               <Button className="flex-1">Enroll Now</Button>
+    //               <Button variant="outline" className="flex-1 bg-transparent">
+    //                 Learn More
+    //               </Button>
+    //             </div>
+    //           </CardContent>
+    //         </Card>
+    //       ))}
+    //     </div>
 
-        <div className="text-center mt-12">
-          <Button size="lg" variant="outline">
-            View All Courses
-          </Button>
-        </div>
-      </div>
-    </section>
+    //     <div className="text-center mt-12">
+    //       <Button size="lg" variant="outline">
+    //         View All Courses
+    //       </Button>
+    //     </div>
+    //   </div>
+    // </section>
   )
 }

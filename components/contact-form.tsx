@@ -67,7 +67,6 @@ export default function ContactForm() {
         <Textarea placeholder="Tell us about your goals and any questions you have" rows={4} />
       </div>
 
-      {/* Consent row above the submit button, as requested */}
       <div className="flex items-start gap-3 rounded-md border border-border p-3">
         <Checkbox
           id="privacy-consent"

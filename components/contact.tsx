@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
 import ContactForm from "./contact-form"
+import { InquiryPopup } from "./inquiry-popup"
 
 export function Contact() {
   return (
@@ -126,6 +127,9 @@ export function Contact() {
                 <Phone className="mr-2 h-5 w-5" />
                 Call Now: +91 7319792555
               </Button>
+              <div className="mt-4">
+                <InquiryPopup />
+              </div>
             </div>
           </div>
 

@@ -1,7 +1,8 @@
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { About } from "@/components/about"
-import { Courses } from "@/components/courses"
+import { Course } from "@/components/course"
+import { StudentWork } from "@/components/studentwork"
 import { ArenaStars } from "@/components/arena-stars"
 import { Gallery } from "@/components/gallery"
 import { WhyArena } from "@/components/why-arena"
@@ -17,8 +18,9 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Course />
+        <StudentWork />
         <About />
-        <Courses />
         <ArenaStars />
         <Gallery />
         <WhyArena />
