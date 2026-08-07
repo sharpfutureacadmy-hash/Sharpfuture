@@ -142,6 +142,28 @@ export function Contact() {
             </CardContent>
           </Card>
         </div>
+
+        {/*
+          Hidden static Netlify form for build-time detection.
+          This does not affect UI, layout, or functionality.
+        */}
+        <form
+          name="inquiry"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          className="hidden"
+        >
+          <input type="hidden" name="form-name" value="inquiry" />
+          <input type="hidden" name="bot-field" value="" />
+          <input type="hidden" name="firstName" value="" />
+          <input type="hidden" name="lastName" value="" />
+          <input type="hidden" name="email" value="" />
+          <input type="hidden" name="phone" value="" />
+          <input type="hidden" name="course" value="" />
+          <input type="hidden" name="message" value="" />
+          <input type="hidden" name="consent" value="" />
+        </form>
       </div>
     </section>
   )
