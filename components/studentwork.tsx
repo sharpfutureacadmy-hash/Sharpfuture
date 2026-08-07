@@ -6,13 +6,14 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 const studentWorkImages = [
   "Banner-03.jpg",
   "fantasy-game-environment-with-castle.jpg",
-  "/students-learning-animation-and-vfx-in-modern-comp.jpg",
+  // "/students-learning-animation-and-vfx-in-modern-comp.jpg",
   "3d-animated-character-in-action-scene.jpg",
-  "/modern-animation-studio-with-students-working-on-c.jpg",
+  // "/modern-animation-studio-with-students-working-on-c.jpg",
   "/vfx-compositing-and-special-effects.jpg",
-  "/graphic-design-portfolio-and-branding.jpg",
-  "/web-development-and-responsive-design.jpg",
-  "/professional-male-instructor-web-development-teach.jpg",
+  "/student1.png",
+  "/student2.png",
+  "/student3.png",
+  // "/professional-male-instructor-web-development-teach.jpg",
 ]
 
 const extendedImages = [...studentWorkImages, ...studentWorkImages, ...studentWorkImages]

@@ -13,7 +13,8 @@ const bannerImages = [
   "/vfx-compositing-and-special-effects.jpg",
   "/graphic-design-portfolio-and-branding.jpg",
   "/web-development-and-responsive-design.jpg",
-  "/professional-male-instructor-web-development-teach.jpg",
+  //"/professional-male-instructor-web-development-teach.jpg",
+  "/BVOC+admissions_Banner.jpg"
 ]
 
 const carouselImages = ["Banner-03.jpg",

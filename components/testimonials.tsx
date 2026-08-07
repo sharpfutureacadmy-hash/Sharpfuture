@@ -38,13 +38,13 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="py-20">
+    <section id="testimonials" className="py-20 bg-slate-950 text-slate-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-balance">
+          <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-white">
             What Our <span className="text-primary">Students Say</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty">
+          <p className="text-lg text-slate-300 max-w-3xl mx-auto text-pretty">
             Don't just take our word for it. Here's what our successful alumni have to say about their experience at
             Sharp Future Academy.
           </p>
@@ -52,8 +52,8 @@ export function Testimonials() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="p-8 hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="space-y-6">
+            <Card key={index} className="p-8 bg-slate-900/95 border border-white/10 hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="space-y-6 text-slate-100">
                 <div className="flex items-center gap-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="h-5 w-5 fill-accent text-accent" />
@@ -62,7 +62,7 @@ export function Testimonials() {
 
                 <div className="relative">
                   <Quote className="h-8 w-8 text-primary/20 absolute -top-2 -left-2" />
-                  <p className="text-muted-foreground italic pl-6">"{testimonial.text}"</p>
+                  <p className="text-slate-300 italic pl-6">"{testimonial.text}"</p>
                 </div>
 
                 <div className="flex items-center gap-4">
@@ -72,8 +72,8 @@ export function Testimonials() {
                     className="w-16 h-16 rounded-full object-cover"
                   />
                   <div>
-                    <h4 className="font-bold text-lg">{testimonial.name}</h4>
-                    <p className="text-sm text-muted-foreground">{testimonial.course}</p>
+                    <h4 className="font-bold text-lg text-white">{testimonial.name}</h4>
+                    <p className="text-sm text-slate-300">{testimonial.course}</p>
                     <p className="text-sm text-primary font-medium">{testimonial.company}</p>
                   </div>
                 </div>
