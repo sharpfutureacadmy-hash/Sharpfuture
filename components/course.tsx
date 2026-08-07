@@ -118,7 +118,7 @@ export function Course() {
   return (
     <section id="courses" className="w-full bg-[#120b29] text-white py-16 overflow-hidden relative border-t border-white/10">
       {/* Background Radial Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] bg-purple-600/15 rounded-full blur-[150px] pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[240px] sm:w-[620px] sm:h-[340px] lg:w-[900px] lg:h-[550px] bg-purple-600/15 rounded-full blur-[150px] pointer-events-none"></div>
 
       {/* Top Admissions Badge & Header */}
       <div className="container mx-auto px-4 relative z-10 text-center space-y-4 mb-10">
@@ -161,7 +161,7 @@ export function Course() {
         </button>
 
         {/* 3D Centered Track with Stepping (Matching Student's Work) */}
-        <div className="relative flex items-center overflow-hidden h-[680px] w-full">
+        <div className="relative flex items-center overflow-hidden h-[420px] sm:h-[520px] lg:h-[680px] w-full">
           <div
             ref={trackRef}
             className="flex items-center"
@@ -249,7 +249,7 @@ export function Course() {
                     }}
                   >
                     <div
-                      className={`relative group overflow-hidden rounded-none w-full h-[480px] ${
+                      className={`relative group overflow-hidden rounded-none w-full h-[340px] sm:h-[420px] lg:h-[480px] ${
                         isCenter
                           ? "shadow-[0_20px_80px_rgba(0,0,0,0.95)] ring-1 ring-white/40"
                           : "shadow-2xl"

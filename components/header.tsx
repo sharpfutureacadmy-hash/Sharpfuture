@@ -22,8 +22,8 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
       {/* Top bar */}
       <div className="bg-primary text-primary-foreground py-2">
-        <div className="container mx-auto px-4 flex justify-between items-center text-sm">
-          <div className="flex items-center gap-4">
+        <div className="container mx-auto px-4 flex flex-wrap justify-between items-center gap-2 text-sm">
+          <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2">
               <Phone className="h-4 w-4" />
               <span className="hidden sm:inline">+91 7319792555</span>
@@ -35,8 +35,8 @@ export function Header() {
               <span className="lg:hidden hidden sm:inline">Email Us</span>
             </div>
           </div>
-          <div className="hidden md:block">
-            <span>Follow us on social media for updates!</span>
+          <div className="hidden md:block min-w-0">
+            <span className="break-words">Follow us on social media for updates!</span>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@ export function Header() {
       <div className="bg-slate-800 text-white py-2">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <span className="text-sm font-medium">
+            <span className="text-sm font-medium break-words">
               Get free career counselling today. Call us:
               <span className="hidden lg:inline">
                 {" "}

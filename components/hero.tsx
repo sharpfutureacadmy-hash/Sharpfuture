@@ -105,15 +105,15 @@ export function Hero() {
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="text-lg px-8 shadow-lg shadow-primary/20" onClick={() => window.open("tel:+917319792555", "_self")}>
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4">
+                <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 shadow-lg shadow-primary/20 w-full sm:w-auto" onClick={() => window.open("tel:+917319792555", "_self")}>
                   <Phone className="mr-2 h-5 w-5" />
                   Call Now
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg px-8 border-white/40 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20"
+                  className="text-base sm:text-lg px-6 sm:px-8 border-white/40 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20 w-full sm:w-auto"
                   onClick={() =>
                     window.open(
                       "https://wa.me/917319792555?text=Hi, I would like to know more about your courses",
@@ -126,7 +126,7 @@ export function Hero() {
                 </Button>
               </div>
 
-              <div className="grid grid-cols-3 gap-8 pt-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 pt-8">
                 <div className="rounded-2xl border border-white/10 bg-white/10 p-4 text-center backdrop-blur-sm">
                   <div className="flex items-center justify-center mb-2">
                     <Users className="h-8 w-8 text-primary" />

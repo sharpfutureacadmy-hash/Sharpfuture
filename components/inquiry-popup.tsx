@@ -154,7 +154,7 @@ export function InquiryPopup() {
         }
         setOpen(value)
       }}>
-        <DialogContent className="max-w-[560px] rounded-2xl p-0 overflow-hidden border-0 shadow-2xl">
+        <DialogContent className="sm:max-w-[560px] rounded-2xl p-0 border-0 shadow-2xl">
           <div className="bg-gradient-to-r from-blue-500 to-emerald-600 p-5 text-primary-foreground">
             <DialogHeader className="text-left space-y-2">
               <DialogTitle className="text-2xl font-semibold">Start Your Career Enquiry</DialogTitle>

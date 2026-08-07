@@ -133,7 +133,7 @@ export function StudentWork() {
 
         <div
           ref={wrapperRef}
-          className="relative w-full overflow-visible py-4"
+          className="relative w-full overflow-hidden lg:overflow-visible py-4"
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
@@ -154,7 +154,7 @@ export function StudentWork() {
             <ChevronRight className="h-6 w-6 transition-transform group-hover:translate-x-0.5" />
           </button>
 
-          <div className="relative flex items-center overflow-visible h-[680px] w-full">
+          <div className="relative flex items-center overflow-visible h-[420px] sm:h-[520px] md:h-[580px] lg:h-[680px] w-full">
             <div
               ref={trackRef}
               className="flex items-center"
@@ -228,7 +228,7 @@ export function StudentWork() {
                         WebkitBackfaceVisibility: "hidden",
                       }}
                     >
-                      <div className={`relative group overflow-hidden rounded-none w-full h-[480px] ${isCenter ? "shadow-[0_20px_80px_rgba(0,0,0,0.95)] ring-1 ring-white/40" : "shadow-2xl"}`}>
+                      <div className={`relative group overflow-hidden rounded-none w-full h-[340px] sm:h-[420px] lg:h-[480px] ${isCenter ? "shadow-[0_20px_80px_rgba(0,0,0,0.95)] ring-1 ring-white/40" : "shadow-2xl"}`}>
                         <img
                           src={image}
                           alt={`Student work ${index + 1}`}
