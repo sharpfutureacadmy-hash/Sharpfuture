@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
+import { sendInquiryEmail } from "@/app/actions/sendInquiry"
 import {
   Dialog,
   DialogContent,
@@ -102,30 +103,23 @@ export default function ContactForm() {
 
     setSubmitting(true)
 
-    const body = {
-      "form-name": "contact",
-      "bot-field": "",
-      firstName: form.firstName,
-      lastName: form.lastName,
-      email: form.email,
-      phone: form.phone,
-      course: form.course,
-      message: form.message,
-      consent: consent ? "yes" : "no",
-    }
-
     try {
-      const response = await fetch(window.location.pathname, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encodeFormData(body),
+      const result = await sendInquiryEmail({
+        firstName: form.firstName,
+        lastName: form.lastName,
+        email: form.email,
+        phone: form.phone,
+        course: form.course,
+        message: form.message,
+        consent,
+        botField: "",
       })
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok")
+      if (!result || !result.success) {
+        setErrors((prev) => ({ ...prev, submit: result?.message || "Something went wrong. Please try again." }))
+      } else {
+        setSubmitted(true)
       }
-
-      setSubmitted(true)
     } catch (error) {
       setErrors((prev) => ({ ...prev, submit: "Something went wrong. Please try again." }))
     } finally {
