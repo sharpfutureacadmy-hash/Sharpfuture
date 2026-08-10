@@ -7,6 +7,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
+import { sendInquiryEmail } from "@/app/actions/sendInquiry"
 
 const courseOptions = [
   "Animation Prime",
@@ -44,12 +45,6 @@ export function InquiryPopup() {
   function updateField<K extends keyof FormState>(field: K, value: string) {
     setForm((prev) => ({ ...prev, [field]: value }))
     setErrors((prev) => ({ ...prev, [field]: undefined }))
-  }
-
-  function encodeFormData(data: Record<string, string>) {
-    return Object.entries(data)
-      .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
-      .join("&")
   }
 
   function validate() {
@@ -100,28 +95,17 @@ export function InquiryPopup() {
 
     setSubmitting(true)
 
-    const body = {
-      "form-name": "inquiry",
-      "bot-field": "",
-      firstName: form.firstName,
-      lastName: form.lastName,
-      email: form.email,
-      phone: form.phone,
-      course: form.course,
-      message: form.message,
-      consent: consent ? "yes" : "no",
-    }
-
     try {
-      const response = await fetch(window.location.pathname, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encodeFormData(body),
+      await sendInquiryEmail({
+        firstName: form.firstName,
+        lastName: form.lastName,
+        email: form.email,
+        phone: form.phone,
+        course: form.course,
+        message: form.message,
+        consent,
+        botField: "",
       })
-
-      if (!response.ok) {
-        throw new Error("Network response was not ok")
-      }
 
       setSubmitted(true)
     } catch (error) {
@@ -184,8 +168,6 @@ export function InquiryPopup() {
               <form
                 name="inquiry"
                 method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
                 className="space-y-4"
                 onSubmit={handleSubmit}
                 noValidate

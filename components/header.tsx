@@ -21,7 +21,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
       {/* Top bar */}
-      <div className="bg-primary text-primary-foreground py-2">
+       <div className="bg-primary text-primary-foreground py-2">
         <div className="container mx-auto px-4 flex flex-wrap justify-between items-center gap-2 text-sm">
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2">
@@ -54,7 +54,7 @@ export function Header() {
             </span>
           </div>
         </div>
-      </div>
+      </div> 
 
       {/* Main navigation */}
       <div className="container mx-auto px-4">

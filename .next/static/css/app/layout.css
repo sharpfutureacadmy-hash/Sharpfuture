@@ -3807,6 +3807,9 @@ font-weight: 100 900;
         background-color: color-mix(in oklab, var(--background) 60%, transparent);
       }
     }
+    .supports-\[backdrop-filter\]\:bg-transparent {
+      background-color: transparent;
+    }
   }
   @media (width >= 40rem) {
     .sm\:top-auto {
