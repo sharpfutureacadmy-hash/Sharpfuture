@@ -7,10 +7,10 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <img src="/sharp-future-academy-logo.jpeg" alt="Sharp Future Academy Logo" className="h-10 w-10" />
+              <img src="/sharp-future-academy-logo.png" alt="Sharp Future Academy Logo" className="h-10 w-10" />
               <div>
                 <h3 className="text-xl font-bold">Sharp Future Academy</h3>
-                <p className="text-sm opacity-80">Chhata Chowk, muzaffarpur</p>
+                <p className="text-sm opacity-80">Lenin Chowk, Muzaffarpur</p>
               </div>
             </div>
             <p className="text-sm opacity-80 max-w-xs">

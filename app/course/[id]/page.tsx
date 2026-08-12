@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { courseData } from "@/lib/course";
+import { InquiryPopup } from "@/components/inquiry-popup";
 
 export default async function CoursePage({
   params,
@@ -15,6 +16,10 @@ export default async function CoursePage({
   if (!course) {
     notFound();
   }
+
+  const whatsappEnrollUrl = `https://api.whatsapp.com/send/?phone=917319792555&text=${encodeURIComponent(
+    `Hi, I would like to apply for the ${course.title} course at Sharp Future Academy. Please provide more details.`,
+  )}&type=phone_number&app_absent=0`;
 
   return (
     <div className="bg-[#0b0b16] text-white">
@@ -76,15 +81,21 @@ export default async function CoursePage({
 
               </div>
 
-              <div className="flex gap-5 mt-10">
+              <div className="flex flex-wrap gap-5 mt-10">
 
-                <button className="bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-xl font-semibold transition">
-                  Apply Now
-                </button>
+                <InquiryPopup
+                  triggerLabel="Apply Now"
+                  triggerClassName="bg-orange-500 hover:bg-orange-600 px-8 py-8 rounded-xl font-semibold transition text-white"
+                  defaultOpen={false}
+                />
 
-                <button className="border border-white hover:bg-white hover:text-black px-8 py-4 rounded-xl transition">
+                <a
+                  href="/Brochure-2026.pdf"
+                  download="Brochure-2026.pdf"
+                  className="inline-flex items-center justify-center border border-white hover:bg-white hover:text-black px-8 py-4 rounded-xl transition"
+                >
                   Download Brochure
-                </button>
+                </a>
 
               </div>
 
@@ -240,9 +251,14 @@ export default async function CoursePage({
           industry-oriented training and placement assistance.
         </p>
 
-        <button className="mt-10 bg-orange-500 hover:bg-orange-600 px-10 py-4 rounded-xl text-lg font-semibold">
+        <a
+          href={whatsappEnrollUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-10 inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 px-10 py-4 rounded-xl text-lg font-semibold"
+        >
           Enroll Now
-        </button>
+        </a>
 
       </section>
 

@@ -60,7 +60,7 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
-            <img src="/sharp-future-academy-logo.jpeg" alt="Sharp Future Academy Logo" className="h-10 w-10" />
+            <img src="/sharp-future-academy-logo.png" alt="Sharp Future Academy Logo" className="h-22 w-25" />
             <div>
               <h1 className="text-lg sm:text-xl font-bold text-primary">Sharp Future Academy</h1>
               <p className="text-xs text-muted-foreground">Design Your Future</p>

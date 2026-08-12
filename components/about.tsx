@@ -19,7 +19,7 @@ export function About() {
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <img
-              src="/modern-animation-studio-with-students-working-on-c.jpg"
+              src="/modern-animation-studio-with-students-working-on-c.jpeg"
               alt="Sharp Future Academy Studio"
               className="rounded-2xl shadow-lg"
             />

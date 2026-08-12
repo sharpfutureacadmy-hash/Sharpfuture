@@ -36,7 +36,7 @@ export const courseData = [
   {
     id: 1,
     title: "Digital Photography",
-    image: "/modern-animation-studio-with-students-working-on-c.jpg",
+    image: "/modern-animation-studio-with-students-working-on-c.jpeg",
     duration: "6 Months",
     fees: "₹xxxx",
     description: "Professional Photography Course",

@@ -1,53 +1,74 @@
 "use client"
 
+import Link from "next/link"
 import { useState } from "react"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
 const galleryItems = [
   {
+    courseId: 6,
     title: "Student 3D Animation Project",
     category: "Animation",
     image: "/3d-animated-character-in-action-scene.jpg",
   },
   {
+    courseId: 7,
     title: "VFX Compositing Work",
     category: "VFX",
     image: "/visual-effects-compositing-with-explosions.jpg",
   },
   {
+    courseId: 8,
     title: "Game Environment Design",
     category: "Gaming",
     image: "/fantasy-game-environment-with-castle.jpg",
   },
   {
+    courseId: 9,
     title: "Character Design Portfolio",
     category: "Animation",
     image: "/cartoon-character-design-sheet.jpg",
   },
   {
+    courseId: 7,
     title: "Motion Graphics Project",
     category: "VFX",
     image: "/motion-graphics-logo-animation.jpg",
   },
   {
+    courseId: 3,
     title: "Web Design Project",
     category: "Web Design",
     image: "/modern-website-design-mockup.jpg",
   },
   {
+    courseId: 9,
     title: "Digital Art Creation",
     category: "Graphics",
     image: "/placeholder.svg?height=300&width=400",
   },
   {
+    courseId: 8,
     title: "Game UI Design",
     category: "Gaming",
     image: "/placeholder.svg?height=300&width=400",
   },
+  {
+    courseId: 9,
+    title: "CAD Architectural Model",
+    category: "CAD",
+    image: "/cad_img2.png?height=300&width=400",
+  },
+  {
+    courseId: 10,
+    title: "Coding Project Showcase",
+    category: "Coding",
+    image: "/coding_img1.jpg?height=300&width=400",
+  },
 ]
 
-const categories = ["All", "Animation", "VFX", "Gaming", "Web Design", "Graphics"]
+const categories = ["All", "Animation", "VFX", "Gaming", "Web Design", "Graphics","CAD","Coding"]
 
 export function Gallery() {
   const [activeCategory, setActiveCategory] = useState("All")
@@ -85,26 +106,25 @@ export function Gallery() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredItems.map((item, index) => (
-            <Card
-              key={index}
-              className="overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300"
-            >
-              <div className="relative overflow-hidden">
-                <img
-                  src={item.image || "/placeholder.svg"}
-                  alt={item.title}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="text-center text-white p-4">
-                    <h3 className="font-bold text-lg mb-2 text-white drop-shadow-lg">{item.title}</h3>
-                    <Badge variant="outline" className="bg-white/90 text-slate-900 border-white/50">
-                      {item.category}
-                    </Badge>
+            <Link key={index} href={`/course/${item.courseId}`} className="block">
+              <Card className="overflow-hidden group cursor-pointer hover:shadow-xl transition-all duration-300">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={item.image || "/placeholder.svg"}
+                    alt={item.title}
+                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="text-center text-white p-4">
+                      <h3 className="font-bold text-lg mb-2 text-white drop-shadow-lg">{item.title}</h3>
+                      <Badge variant="outline" className="bg-white/90 text-slate-900 border-white/50">
+                        {item.category}
+                      </Badge>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>

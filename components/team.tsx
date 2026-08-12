@@ -7,7 +7,7 @@ export function Team() {
       position: "Director",
       specialization:
         "A visionary leader with deep industry knowledge, driving innovation and guiding the institute towards excellence in creative education.",
-      image: "/narendra-chaudhari.png",
+      image: "/naren_img.jpeg",
     },
     {
       name: "Mrs. Neha Kumari",
@@ -16,13 +16,13 @@ export function Team() {
         "An inspiring leader dedicated to nurturing talent, ensuring quality training, and fostering a culture of creativity and growth",
       image: "/neha-kumari.avif",
     },
-    // {
-    //   name: "Mr. Om Prakash Tiwari",
-    //   position: "Business Development Manager",
-    //   specialization:
-    //     "Expert in strategic partnerships and growth, building strong industry connections to create new opportunities for students and the institute.",
-    //   image: "/om-prakash-tiwari.png",
-    // },
+    {
+      name: "Mr. Sadab Alam",
+      position: "Branch Head",
+      specialization:
+        "Expert in strategic partnerships and growth, building strong industry connections to create new opportunities for students and the institute.",
+      image: "/sadab_img.jpeg",
+    },
     {
       name: "Mr. Pankaj Kumar Singh",
       position: "Faculty",
@@ -30,27 +30,28 @@ export function Team() {
         "A creative educator with expertise in animation and design, committed to delivering hands-on, industry-focused training to students.",
       image: "/pankaj-kumar-singh.jpeg",
     },
-    // {
-    //   name: "Mr. Manish Verma",
-    //   position: "Marketing Head",
-    //   specialization:
-    //     "An innovative marketer with a passion for branding and outreach, ensuring our programs reach aspiring creatives across the region.",
-    //   image: "/manish-verma.png",
-    // },
-    // {
-    //   name: "Ms. Sushmita Kumari",
-    //   position: "Academic Counsellor",
-    //   specialization:
-    //     "Guides students through their learning journey, helping them choose the right courses and supporting them in achieving career goals.",
-    //   image: "/sushmita-kumari.png",
-    // },
-    // {
-    //   name: "Ms. Sonam Kumari",
-    //   position: "Academic Counsellor",
-    //   specialization:
-    //     "Dedicated to mentoring and guiding students, ensuring they get the maximum value from their education and training experience.",
-    //   image: "/sonam-kumari.png",
-    // },
+    {
+      name: "Mr. Trilokeenath Ojha",
+      position: "Faculty",
+      specialization:
+        "A passionate software developer focused on building innovative solutions and creating seamless digital experiences through clean, efficient code.",
+      image: "/trilok_img.jpeg",
+    },
+    {
+      name: "Ms. Akansha Kumari",
+      position: "Academic Counsellor",
+      specialization:
+        "Dedicated to mentoring and guiding students, ensuring they get the maximum value from their education and training experience.",
+      image: "/akaksha_img.jpeg",
+    },
+    {
+      name: "Ms. Anamika Kumari",
+      position: "Academic Counsellor",
+      specialization:
+        "Guides students through their learning journey, helping them choose the right courses and supporting them in achieving career goals.",
+      image: "/anamika_img.png",
+    },
+    
   ]
 
   return (

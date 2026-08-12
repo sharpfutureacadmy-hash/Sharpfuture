@@ -69,7 +69,7 @@ export function Contact() {
                     <p className="text-muted-foreground">
                       342/109, 1st Floor, Opposite Prashant Honda Showroom
                       <br />
-                      Chhata Chowk, Muzaffarpur, Bihar 842001
+                      Lenin Chowk, Muzaffarpur, Bihar 842001
                       <br />
                       India
                     </p>
@@ -128,7 +128,7 @@ export function Contact() {
                 Call Now: +91 7319792555
               </Button>
               <div className="mt-4">
-                <InquiryPopup />
+                <InquiryPopup defaultOpen={true} />
               </div>
             </div>
           </div>

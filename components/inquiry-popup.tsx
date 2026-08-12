@@ -27,9 +27,23 @@ type FormState = {
   message: string
 }
 
-export function InquiryPopup() {
-  const [open, setOpen] = useState(true)
+type InquiryPopupProps = {
+  triggerLabel?: string
+  triggerClassName?: string
+  defaultOpen?: boolean
+}
+
+export function InquiryPopup({
+  triggerLabel = "Open Inquiry Form",
+  triggerClassName,
+  defaultOpen = false,
+}: InquiryPopupProps) {
+  const [open, setOpen] = useState(false)
   const [consent, setConsent] = useState(false)
+
+  React.useEffect(() => {
+    setOpen(defaultOpen)
+  }, [defaultOpen])
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [errors, setErrors] = useState<Partial<Record<keyof FormState | "consent" | "submit", string>>>({})
@@ -117,8 +131,12 @@ export function InquiryPopup() {
 
   return (
     <>
-      <Button onClick={() => setOpen(true)} size="lg" className="w-full">
-        Open Inquiry Form
+      <Button
+        onClick={() => setOpen(true)}
+        size="lg"
+        className={triggerClassName ?? "w-full"}
+      >
+        {triggerLabel}
       </Button>
 
       <Dialog open={open} onOpenChange={(value) => {
