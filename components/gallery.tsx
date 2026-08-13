@@ -55,13 +55,13 @@ const galleryItems = [
     image: "/placeholder.svg?height=300&width=400",
   },
   {
-    courseId: 9,
+    courseId: 11,
     title: "CAD Architectural Model",
     category: "CAD",
     image: "/cad_img2.png?height=300&width=400",
   },
   {
-    courseId: 10,
+    courseId: 12,
     title: "Coding Project Showcase",
     category: "Coding",
     image: "/coding_img1.jpg?height=300&width=400",

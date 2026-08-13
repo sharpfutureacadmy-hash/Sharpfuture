@@ -3815,9 +3815,6 @@ font-weight: 100 900;
     .sm\:h-\[520px\] {
       height: 520px;
     }
-    .sm\:h-auto {
-      height: auto;
-    }
     .sm\:w-\[620px\] {
       width: 620px;
     }
@@ -3969,9 +3966,6 @@ font-weight: 100 900;
     }
   }
   @media (width >= 64rem) {
-    .lg\:mx-0 {
-      margin-inline: 0px;
-    }
     .lg\:flex {
       display: flex;
     }
