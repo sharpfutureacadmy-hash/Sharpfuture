@@ -3,7 +3,7 @@ import { SITE_CONFIG } from "@/lib/seo-keywords"
 
 export const metadata: Metadata = {
   title: "Terms & Conditions - Sharp Future Academy",
-  description: "Terms and conditions for using Sharp Future Academy website and services. Review our service terms."
+  description: "Terms and conditions for using Sharp Future Academy website and services. Review our service terms.",
   robots: {
     index: true,
     follow: true,
