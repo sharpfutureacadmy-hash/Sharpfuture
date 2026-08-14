@@ -82,9 +82,9 @@ export const ORGANIZATION_SCHEMA = {
 
 export const SITE_CONFIG = {
   name: "Sharp Future Academy",
-  title: "Sharp Future Academy - Leading Animation & Multimedia Institute",
+  title: "Sharp Future Academy - Animation & Web Design Courses",
   description:
-    "Join Sharp Future Academy for world-class training in Animation, VFX, Gaming, Web Design, and Digital Marketing. Industry-expert faculty, modern infrastructure, and excellent placement support in Muzaffarpur, Bihar.",
+    "Professional animation, VFX, web design, and digital marketing courses in Muzaffarpur, Bihar with industry training and live projects.",
   url: "https://sharpfuture.com",
   ogImage: "https://sharpfuture.com/og-image.jpg",
   twitterHandle: "@sharpfuture",

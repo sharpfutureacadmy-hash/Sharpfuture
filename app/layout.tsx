@@ -8,8 +8,8 @@ import { SITE_CONFIG, SEO_KEYWORDS, ORGANIZATION_SCHEMA } from "@/lib/seo-keywor
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Sharp Future Academy - Leading Animation & Multimedia Institute in Muzaffarpur, Bihar",
-  description: SITE_CONFIG.description,
+  title: "Sharp Future Academy - Animation & Web Design Courses",
+  description: "Professional animation, VFX, web design, and digital marketing courses in Muzaffarpur, Bihar with industry training and live projects.",
   keywords: SEO_KEYWORDS.join(", "),
   authors: [{ name: "Sharp Future Academy" }],
   creator: "Sharp Future Academy",
@@ -59,6 +59,22 @@ export const metadata: Metadata = {
   verification: {
     google: "google-site-verification-code",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/manifest.json",
+}
+
+declare global {
+  interface Window {
+    gtag: any;
+  }
 }
 
 export default function RootLayout({
@@ -73,6 +89,23 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(ORGANIZATION_SCHEMA),
+          }}
+        />
+        {/* Google Analytics */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'YOUR_GA_ID', {
+                page_path: window.location.pathname,
+              });
+            `,
           }}
         />
       </head>

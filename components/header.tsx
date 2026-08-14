@@ -31,7 +31,12 @@ export function Header() {
             </div>
             <div className="flex items-center gap-2">
               <Mail className="h-4 w-4" />
-              <span className="hidden lg:inline">info@sharpfuture-edu.in</span>
+              <a
+                href="mailto:info@sharpfuture-edu.in"
+                className="hidden lg:inline hover:underline"
+              >
+                info@sharpfuture-edu.in
+              </a>
               <span className="lg:hidden hidden sm:inline">Email Us</span>
             </div>
           </div>
@@ -62,7 +67,7 @@ export function Header() {
           <div className="flex items-center gap-3">
             <img src="/sharp-future-academy-logo.png" alt="Sharp Future Academy Logo" className="h-22 w-25" />
             <div>
-              <h1 className="text-lg sm:text-xl font-bold text-primary">Sharp Future Academy</h1>
+              <div className="text-lg sm:text-xl font-bold text-primary">Sharp Future Academy</div>
               <p className="text-xs text-muted-foreground">Design Your Future</p>
             </div>
           </div>

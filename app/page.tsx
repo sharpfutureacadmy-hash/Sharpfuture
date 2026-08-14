@@ -15,8 +15,8 @@ import { Footer } from "@/components/footer"
 import { SITE_CONFIG } from "@/lib/seo-keywords"
 
 export const metadata: Metadata = {
-  title: "Sharp Future Academy - Animation, VFX & Web Design Courses in Muzaffarpur",
-  description: SITE_CONFIG.description,
+  title: "Animation & Web Design Courses - Sharp Future Academy",
+  description: "Learn animation, VFX, game design, web development, and digital marketing at Sharp Future Academy in Muzaffarpur. Placement support, live projects, expert training.",
   openGraph: {
     title: "Sharp Future Academy - Leading Creative & IT Training Institute",
     description: SITE_CONFIG.description,

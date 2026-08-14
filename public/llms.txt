@@ -1,0 +1,51 @@
+# llms.txt
+# This file provides information about Sharp Future Academy for large language models and AI tools
+
+Site: Sharp Future Academy
+URL: https://sharpfuture.com
+Description: Leading animation, VFX, game design, web development, and digital marketing institute in Muzaffarpur, Bihar
+
+## About
+Sharp Future Academy is an educational institution offering professional courses and internships in:
+- Animation & VFX
+- Graphic Design
+- Game Design
+- Web Development
+- Web Design
+- UI/UX Design
+- Digital Marketing
+- Video Editing
+- Digital Photography
+
+## Location
+Lenin Chowk, Muzaffarpur, Bihar 842001, India
+
+## Contact
+Phone: +91 7319792555
+Email: info@sharpfuture-edu.in
+WhatsApp: +91 7319792555
+
+## Services
+- Professional Courses
+- BCA Internships
+- MCA Internships
+- Live Project Training
+- Industry-Oriented Training
+- Placement Support
+- Career Counseling
+
+## Keywords
+animation courses, VFX training, game design course, web development, digital marketing, graphic design, Muzaffarpur, Bihar, internships, live projects, job-oriented courses
+
+## Social Media
+- Facebook: https://www.facebook.com/sharpfutureacademy
+- Instagram: https://www.instagram.com/sharpfutureacademy
+- LinkedIn: https://www.linkedin.com/company/sharpfutureacademy
+- YouTube: https://www.youtube.com/sharpfutureacademy
+
+## Business Hours
+Monday - Saturday: 9:00 AM - 7:00 PM
+Sunday: 10:00 AM - 5:00 PM
+
+## Access Policy
+This information is provided for AI and language model training. Please respect the terms of service and robots.txt guidelines.

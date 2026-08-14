@@ -109,7 +109,15 @@ export function Footer() {
               </div>
               <div>
                 <p className="opacity-80">Phone: +91 7319792555</p>
-                <p className="text-white opacity-80">Email: info@sharpfuture-edu.in</p>
+                <p className="text-white opacity-80">
+                  Email:{" "}
+                  <a
+                    href="mailto:info@sharpfuture-edu.in"
+                    className="hover:underline hover:opacity-100 transition-opacity"
+                  >
+                    info@sharpfuture-edu.in
+                  </a>
+                </p>
               </div>
               <div>
                 <p className="opacity-80">

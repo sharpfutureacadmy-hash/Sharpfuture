@@ -2,9 +2,9 @@ import type React from "react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Courses | Sharp Future Academy - Animation, VFX, Web Design & Digital Marketing",
+  title: "Professional Courses - Sharp Future Academy",
   description:
-    "Explore professional courses in Animation, VFX, Game Design, Web Development, Digital Marketing, and more at Sharp Future Academy in Muzaffarpur, Bihar. Industry-expert training with placement support.",
+    "Professional animation, VFX, game design, web design, and digital marketing courses with internships, live projects, and placement support in Muzaffarpur, Bihar.",
   robots: {
     index: true,
     follow: true,
