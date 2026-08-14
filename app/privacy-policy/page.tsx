@@ -1,9 +1,21 @@
 import type { Metadata } from "next"
+import { SITE_CONFIG } from "@/lib/seo-keywords"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Sharp Future Academy",
+  title: "Privacy Policy | Sharp Future Academy - Muzaffarpur, Bihar",
   description:
     "This Privacy Policy explains how Sharp Future Academy collects, uses, and protects your personal information when you visit our website or use our services.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Privacy Policy | Sharp Future Academy",
+    description:
+      "This Privacy Policy explains how Sharp Future Academy collects, uses, and protects your personal information.",
+    type: "website",
+    url: `${SITE_CONFIG.url}/privacy-policy`,
+  },
 }
 
 export default function PrivacyPolicyPage() {

@@ -1,8 +1,60 @@
+import type { Metadata } from "next"
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { courseData } from "@/lib/course";
 import { InquiryPopup } from "@/components/inquiry-popup";
+import { SITE_CONFIG } from "@/lib/seo-keywords";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const course = courseData.find((item) => item.id === Number(id));
+
+  if (!course) {
+    return {
+      title: "Course Not Found",
+    };
+  }
+
+  return {
+    title: `${course.title} - Sharp Future Academy Muzaffarpur, Bihar`,
+    description: `Learn ${course.title} at Sharp Future Academy. ${course.description} Duration: ${course.duration}, Fees: ${course.fees}. Industry-expert training with live projects in Muzaffarpur, Bihar.`,
+    keywords: [
+      course.title,
+      `${course.title} course`,
+      `${course.title} training`,
+      "Sharp Future Academy",
+      "Muzaffarpur",
+      "Bihar",
+      "course enrollment",
+      "online course",
+    ].join(", "),
+    openGraph: {
+      title: `${course.title} - Sharp Future Academy`,
+      description: course.description,
+      type: "article",
+      url: `${SITE_CONFIG.url}/course/${course.id}`,
+      images: [
+        {
+          url: course.image || SITE_CONFIG.ogImage,
+          width: 1200,
+          height: 630,
+          alt: course.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${course.title} - Sharp Future Academy`,
+      description: course.description,
+      images: [course.image || SITE_CONFIG.ogImage],
+    },
+  };
+}
 
 export default async function CoursePage({
   params,

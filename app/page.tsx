@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { About } from "@/components/about"
@@ -11,6 +12,18 @@ import { Testimonials } from "@/components/testimonials"
 import { FAQ } from "@/components/faq"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
+import { SITE_CONFIG } from "@/lib/seo-keywords"
+
+export const metadata: Metadata = {
+  title: "Sharp Future Academy - Animation, VFX & Web Design Courses in Muzaffarpur",
+  description: SITE_CONFIG.description,
+  openGraph: {
+    title: "Sharp Future Academy - Leading Creative & IT Training Institute",
+    description: SITE_CONFIG.description,
+    url: SITE_CONFIG.url,
+    type: "website",
+  },
+}
 
 export default function Home() {
   return (

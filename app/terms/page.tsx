@@ -1,8 +1,19 @@
 import type { Metadata } from "next"
+import { SITE_CONFIG } from "@/lib/seo-keywords"
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | Sharp Future Academy",
-  description: "Terms & Conditions for using Sharp Future Academy's website and services.",
+  title: "Terms & Conditions | Sharp Future Academy - Muzaffarpur, Bihar",
+  description: "Terms & Conditions for using Sharp Future Academy's website and services. Read our complete terms of service.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    title: "Terms & Conditions | Sharp Future Academy",
+    description: "Terms & Conditions for using Sharp Future Academy's website and services.",
+    type: "website",
+    url: `${SITE_CONFIG.url}/terms`,
+  },
 }
 
 export default function TermsPage() {
