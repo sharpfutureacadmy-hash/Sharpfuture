@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { Card } from "@/components/ui/card"
 
 const galleryItems = [
@@ -32,10 +33,24 @@ const galleryItems = [
   { title: "", image: "/student_gallery/DSC_0724.jpg" },
 ]
 
+const ITEMS_PER_LOAD = 8
+
 export function Gallery() {
+  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_LOAD)
+
+  const visibleItems = galleryItems.slice(0, visibleCount)
+
+  const handleViewMore = () => {
+    setVisibleCount((prev) =>
+      Math.min(prev + ITEMS_PER_LOAD, galleryItems.length)
+    )
+  }
+
   return (
     <section id="gallery" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
+
+        {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-balance">
             Student <span className="text-primary">Gallery</span>
@@ -47,8 +62,9 @@ export function Gallery() {
           </p>
         </div>
 
+        {/* Gallery */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {galleryItems.map((item, index) => (
+          {visibleItems.map((item, index) => (
             <Card
               key={index}
               className="overflow-hidden"
@@ -63,6 +79,19 @@ export function Gallery() {
             </Card>
           ))}
         </div>
+
+        {/* View More */}
+        {visibleCount < galleryItems.length && (
+          <div className="flex justify-center mt-10">
+            <button
+              onClick={handleViewMore}
+              className="px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium transition-colors hover:bg-primary/90"
+            >
+              View More
+            </button>
+          </div>
+        )}
+
       </div>
     </section>
   )
