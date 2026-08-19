@@ -1,5 +1,4 @@
 import { Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react"
-import { ProtectedEmailLink } from "@/lib/email-protection"
 
 export function Footer() {
   return (
@@ -112,10 +111,12 @@ export function Footer() {
                 <p className="opacity-80">Phone: +91 7319792555</p>
                 <p className="text-white opacity-80">
                   Email:{" "}
-                  <ProtectedEmailLink
-                    email="info@sharpfuture-edu.in"
-                    label="info@sharpfuture-edu.in"
-                  />
+                  <a
+                    href="mailto:info@sharpfuture-edu.in"
+                    className="hover:underline hover:opacity-100 transition-opacity"
+                  >
+                    info@sharpfuture-edu.in
+                  </a>
                 </p>
               </div>
               <div>

@@ -75,6 +75,13 @@ export function generateLocalBusinessSchema() {
     "@id": `${SITE_CONFIG.url}/#localbusiness`,
     name: SITE_CONFIG.name,
     legalName: SITE_CONFIG.legalName,
+    alternateName: [
+      "Sharp Future Academy Muzaffarpur",
+      "Sharp Future Academy Bihar",
+      "Star Future Academy Muzaffarpur",
+      "Sharp Future Academy",
+      "Sharp Future",
+    ],
     description: SITE_CONFIG.description,
     url: SITE_CONFIG.url,
     telephone: SITE_CONFIG.telephone,
@@ -125,6 +132,13 @@ export function generateLocalBusinessSchema() {
       "https://www.linkedin.com/company/sharpfutureacademy",
       "https://www.youtube.com/sharpfutureacademy",
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "128",
+      bestRating: "5",
+      worstRating: "1",
+    },
   };
 }
 
