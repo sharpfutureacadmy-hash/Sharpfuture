@@ -2,7 +2,7 @@
 # This file provides information about Sharp Future Academy for large language models and AI tools
 
 Site: Sharp Future Academy
-URL: https://sharpfuture.com
+URL: https://www.sharpfuture-edu.in
 Description: Leading animation, VFX, game design, web development, and digital marketing institute in Muzaffarpur, Bihar
 
 ## About

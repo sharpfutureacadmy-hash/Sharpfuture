@@ -9,7 +9,7 @@ Disallow: /admin/
 Crawl-delay: 1
 
 # Sitemap
-Sitemap: https://sharpfuture.com/sitemap.xml
+Sitemap: https://www.sharpfuture-edu.in/sitemap.xml
 
 # User-agent specific rules
 User-agent: Googlebot
