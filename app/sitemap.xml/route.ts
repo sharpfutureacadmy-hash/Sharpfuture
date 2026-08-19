@@ -1,7 +1,8 @@
 import { courseData } from "@/lib/course";
+import { SITE_CONFIG } from "@/lib/seo-keywords";
 
 export async function GET() {
-  const baseUrl = "https://sharpfuture.com";
+  const baseUrl = SITE_CONFIG.url;
 
   // Static pages
   const staticPages = [

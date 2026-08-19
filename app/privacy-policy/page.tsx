@@ -2,9 +2,12 @@ import type { Metadata } from "next"
 import { SITE_CONFIG } from "@/lib/seo-keywords"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Sharp Future Academy",
+  title: "Privacy Policy | Sharp Future Academy",
   description:
     "Privacy policy for Sharp Future Academy website. Learn how we protect your data and personal information.",
+  alternates: {
+    canonical: `${SITE_CONFIG.url}/privacy-policy`,
+  },
   robots: {
     index: true,
     follow: true,

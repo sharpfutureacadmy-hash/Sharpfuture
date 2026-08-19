@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Phone, Mail, MessageCircle } from "lucide-react"
+import { ProtectedEmailLink } from "@/lib/email-protection"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -31,12 +32,10 @@ export function Header() {
             </div>
             <div className="flex items-center gap-2">
               <Mail className="h-4 w-4" />
-              <a
-                href="mailto:info@sharpfuture-edu.in"
-                className="hidden lg:inline hover:underline"
-              >
-                info@sharpfuture-edu.in
-              </a>
+              <ProtectedEmailLink
+                email="info@sharpfuture-edu.in"
+                label="info@sharpfuture-edu.in"
+              />
               <span className="lg:hidden hidden sm:inline">Email Us</span>
             </div>
           </div>

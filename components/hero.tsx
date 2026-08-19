@@ -82,7 +82,7 @@ export function Hero() {
                 <img
                   key={image}
                   src={image}
-                  alt={`Background ${index + 1}`}
+                  alt={`Sharp Future Academy Animation & Multimedia Training Muzaffarpur - Banner ${index + 1}`}
                   className="h-full w-full flex-shrink-0 object-cover brightness-110 contrast-105"
                 />
               ))}

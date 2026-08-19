@@ -1,19 +1,36 @@
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Suspense } from "react"
 import { Toaster } from "@/components/ui/toaster"
 import { SITE_CONFIG, SEO_KEYWORDS, ORGANIZATION_SCHEMA } from "@/lib/seo-keywords"
+import { generateWebSiteSchema } from "@/lib/seo-utils"
 import "./globals.css"
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#ea580c",
+}
+
 export const metadata: Metadata = {
-  title: "Sharp Future Academy - Animation & Web Design Courses",
-  description: "Professional animation, VFX, web design, and digital marketing courses in Muzaffarpur, Bihar with industry training and live projects.",
-  keywords: SEO_KEYWORDS.join(", "),
-  authors: [{ name: "Sharp Future Academy" }],
+  metadataBase: new URL(SITE_CONFIG.url),
+  title: {
+    default: "Sharp Future Academy | Animation, VFX, Web Design & IT Training Institute in Muzaffarpur",
+    template: "%s | Sharp Future Academy",
+  },
+  description: SITE_CONFIG.description,
+  keywords: SEO_KEYWORDS,
+  authors: [{ name: "Sharp Future Academy", url: SITE_CONFIG.url }],
   creator: "Sharp Future Academy",
   publisher: "Sharp Future Academy",
+  formatDetection: {
+    email: true,
+    address: true,
+    telephone: true,
+  },
   alternates: {
     canonical: SITE_CONFIG.url,
   },
@@ -33,31 +50,31 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: SITE_CONFIG.url,
     siteName: SITE_CONFIG.name,
-    title: "Sharp Future Academy - Leading Animation & Multimedia Institute",
+    title: "Sharp Future Academy - Best Animation & Multimedia Institute in Muzaffarpur, Bihar",
     description: SITE_CONFIG.description,
     images: [
       {
-        url: SITE_CONFIG.ogImage,
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Sharp Future Academy",
+        alt: "Sharp Future Academy - Animation & Web Design Courses in Muzaffarpur",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sharp Future Academy - Leading Animation & Multimedia Institute",
+    title: "Sharp Future Academy - Best Animation & Multimedia Institute in Muzaffarpur, Bihar",
     description: SITE_CONFIG.description,
     creator: SITE_CONFIG.twitterHandle,
-    images: [SITE_CONFIG.ogImage],
-  },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
+    images: ["/og-image.jpg"],
   },
   verification: {
-    google: "google-site-verification-code",
+    google: process.env.GOOGLE_VERIFICATION_CODE || undefined,
+    yandex: undefined,
+    yahoo: undefined,
+    other: {
+      ...(process.env.BING_VERIFICATION_CODE ? { "msvalidate.01": process.env.BING_VERIFICATION_CODE } : {}),
+    },
   },
   icons: {
     icon: [
@@ -73,7 +90,8 @@ export const metadata: Metadata = {
 
 declare global {
   interface Window {
-    gtag: any;
+    gtag?: any;
+    dataLayer?: any[];
   }
 }
 
@@ -82,32 +100,46 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
     <html lang="en">
       <head>
+        {/* Educational Organization & Local Business Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(ORGANIZATION_SCHEMA),
           }}
         />
-        {/* Google Analytics */}
+        {/* WebSite Schema */}
         <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_ID"
-        ></script>
-        <script
+          type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'YOUR_GA_ID', {
-                page_path: window.location.pathname,
-              });
-            `,
+            __html: JSON.stringify(generateWebSiteSchema()),
           }}
         />
+        {/* Google Analytics (Only loaded when valid ID is present) */}
+        {gaId && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+            ></script>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${gaId}', {
+                    page_path: window.location.pathname,
+                  });
+                `,
+              }}
+            />
+          </>
+        )}
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <Suspense fallback={null}>{children}</Suspense>
@@ -116,3 +148,4 @@ export default function RootLayout({
     </html>
   )
 }
+

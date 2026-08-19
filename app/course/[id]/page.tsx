@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { courseData } from "@/lib/course";
 import { InquiryPopup } from "@/components/inquiry-popup";
 import { SITE_CONFIG } from "@/lib/seo-keywords";
+import { generateCourseSchema, generateBreadcrumbSchema } from "@/lib/seo-utils";
 
 export async function generateMetadata({
   params,
@@ -20,38 +21,47 @@ export async function generateMetadata({
     };
   }
 
+  const courseUrl = `${SITE_CONFIG.url}/course/${course.id}`;
+  const courseTitle = `${course.title} Course in Muzaffarpur, Bihar | Sharp Future Academy`;
+  const courseDescription = `Join the ${course.title} training program at Sharp Future Academy, Muzaffarpur, Bihar. Duration: ${course.duration}. Learn industry software, live project training, portfolio development & 100% placement support.`;
+
   return {
-    title: `${course.title} - Sharp Future Academy Muzaffarpur, Bihar`,
-    description: `Learn ${course.title} at Sharp Future Academy. ${course.description} Duration: ${course.duration}, Fees: ${course.fees}. Industry-expert training with live projects in Muzaffarpur, Bihar.`,
+    title: courseTitle,
+    description: courseDescription,
     keywords: [
-      course.title,
-      `${course.title} course`,
-      `${course.title} training`,
+      `${course.title} course in Muzaffarpur`,
+      `best ${course.title} institute in Bihar`,
+      `${course.title} training center`,
+      `${course.title} classes`,
       "Sharp Future Academy",
       "Muzaffarpur",
       "Bihar",
-      "course enrollment",
-      "online course",
-    ].join(", "),
+      "job oriented courses",
+      "placement assistance",
+    ],
+    alternates: {
+      canonical: courseUrl,
+    },
     openGraph: {
-      title: `${course.title} - Sharp Future Academy`,
-      description: course.description,
+      title: courseTitle,
+      description: courseDescription,
       type: "article",
-      url: `${SITE_CONFIG.url}/course/${course.id}`,
+      url: courseUrl,
+      siteName: SITE_CONFIG.name,
       images: [
         {
-          url: course.image || SITE_CONFIG.ogImage,
+          url: course.image || "/og-image.jpg",
           width: 1200,
           height: 630,
-          alt: course.title,
+          alt: `${course.title} Course - Sharp Future Academy Muzaffarpur`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${course.title} - Sharp Future Academy`,
-      description: course.description,
-      images: [course.image || SITE_CONFIG.ogImage],
+      title: courseTitle,
+      description: courseDescription,
+      images: [course.image || "/og-image.jpg"],
     },
   };
 }
@@ -69,12 +79,29 @@ export default async function CoursePage({
     notFound();
   }
 
+  const courseSchema = generateCourseSchema(course);
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: SITE_CONFIG.url },
+    { name: "Courses", url: `${SITE_CONFIG.url}/#courses` },
+    { name: course.title, url: `${SITE_CONFIG.url}/course/${course.id}` },
+  ]);
+
   const whatsappEnrollUrl = `https://api.whatsapp.com/send/?phone=917319792555&text=${encodeURIComponent(
     `Hi, I would like to apply for the ${course.title} course at Sharp Future Academy. Please provide more details.`,
   )}&type=phone_number&app_absent=0`;
 
   return (
     <div className="bg-[#0b0b16] text-white">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <div className="max-w-7xl mx-auto px-6 py-8">
         <Link
           href="/#courses"
@@ -83,6 +110,7 @@ export default async function CoursePage({
           HOME
         </Link>
       </div>
+
 
       {/* HERO SECTION */}
       <section className="relative h-[650px] overflow-hidden">
