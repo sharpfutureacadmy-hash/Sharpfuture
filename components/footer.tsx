@@ -65,32 +65,32 @@ export function Footer() {
             <h4 className="font-bold text-lg mb-4">Popular Courses</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="opacity-80 hover:opacity-100 transition-opacity">
+                <a href="/course/animation" className="opacity-80 hover:opacity-100 transition-opacity">
                   Animation Prime
                 </a>
               </li>
               <li>
-                <a href="#" className="opacity-80 hover:opacity-100 transition-opacity">
+                <a href="/course/visual-effects" className="opacity-80 hover:opacity-100 transition-opacity">
                   VFX Prime
                 </a>
               </li>
               <li>
-                <a href="#" className="opacity-80 hover:opacity-100 transition-opacity">
+                <a href="/course/game-arts-and-design" className="opacity-80 hover:opacity-100 transition-opacity">
                   Game Art & Design
                 </a>
               </li>
               <li>
-                <a href="#" className="opacity-80 hover:opacity-100 transition-opacity">
+                <a href="/course/web-designing" className="opacity-80 hover:opacity-100 transition-opacity">
                   Web Design
                 </a>
               </li>
               <li>
-                <a href="#" className="opacity-80 hover:opacity-100 transition-opacity">
+                <a href="/course/digital-marketing" className="opacity-80 hover:opacity-100 transition-opacity">
                   Digital Marketing
                 </a>
               </li>
               <li>
-                <a href="#" className="opacity-80 hover:opacity-100 transition-opacity">
+                <a href="/course/graphic-design" className="opacity-80 hover:opacity-100 transition-opacity">
                   Graphic Design
                 </a>
               </li>

@@ -32,9 +32,26 @@ const defaultCareers = [
   "Creative Director",
 ]
 
-export const courseData = [
+export interface CourseItem {
+  id: number;
+  slug: string;
+  title: string;
+  image: string;
+  duration: string;
+  fees: string;
+  description: string;
+  overview: string;
+  eligibility: string;
+  learn: string[];
+  software: string[];
+  careers: string[];
+  images?: string[];
+}
+
+export const courseData: CourseItem[] = [
   {
     id: 1,
+    slug: "digital-photography",
     title: "Digital Photography",
     image: "/modern-animation-studio-with-students-working-on-c.jpeg",
     duration: "6 Months",
@@ -53,6 +70,7 @@ export const courseData = [
   },
   {
     id: 2,
+    slug: "digital-marketing",
     title: "Digital Marketing",
     image: "/digital-marketing-analytics-dashboard.jpg",
     duration: "6 Months",
@@ -71,6 +89,7 @@ export const courseData = [
   },
   {
     id: 3,
+    slug: "web-designing",
     title: "Web Designing",
     image: "/web-development-and-responsive-design.jpg",
     duration: "6 Months",
@@ -84,6 +103,7 @@ export const courseData = [
   },
   {
     id: 4,
+    slug: "fashion-design",
     title: "Fashion Design",
     image: "/cartoon-character-design-sheet.jpg",
     duration: "6 Months",
@@ -97,6 +117,7 @@ export const courseData = [
   },
   {
     id: 5,
+    slug: "interior-design",
     title: "Interior Design",
     image: "/fantasy-game-environment-with-castle.jpg",
     duration: "6 Months",
@@ -115,6 +136,7 @@ export const courseData = [
   },
   {
     id: 6,
+    slug: "animation",
     title: "Animation",
     image: "/3d-character-animation-scene.jpg",
     duration: "6 Months",
@@ -128,6 +150,7 @@ export const courseData = [
   },
   {
     id: 7,
+    slug: "visual-effects",
     title: "Visual Effects",
     image: "/vfx-compositing-and-special-effects.jpg",
     duration: "6 Months",
@@ -141,6 +164,7 @@ export const courseData = [
   },
   {
     id: 8,
+    slug: "game-arts-and-design",
     title: "Game Arts And Design",
     image: "/game-character-design-and-3d-modeling.jpg",
     duration: "6 Months",
@@ -154,6 +178,7 @@ export const courseData = [
   },
   {
     id: 9,
+    slug: "graphic-design",
     title: "Graphic Design",
     image: "/graphic-design-portfolio-and-branding.jpg",
     duration: "6 Months",
@@ -167,6 +192,7 @@ export const courseData = [
   },
   {
     id: 10,
+    slug: "ui-ux-design",
     title: "UI/UX Design",
     image: "/modern-website-design-mockup.jpg",
     duration: "6 Months",
@@ -180,6 +206,7 @@ export const courseData = [
   },
   {
     id: 11,
+    slug: "cad-architectural-model",
     title: "CAD Architectural Model",
     image: "/cad_img2.png",
     duration: "6 Months",
@@ -211,6 +238,7 @@ export const courseData = [
   },
   {
     id: 12,
+    slug: "coding",
     title: "Coding",
     image: "/coding_img1.jpg",
     duration: "6 Months",
@@ -241,3 +269,17 @@ export const courseData = [
     images: ["/coding_img1.jpg"],
   },
 ];
+
+export function getCourseBySlugOrId(identifier: string): CourseItem | undefined {
+  if (!identifier) return undefined;
+  const decoded = decodeURIComponent(identifier).trim().toLowerCase();
+  const normalized = decoded.replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+
+  return courseData.find((course) => {
+    if (String(course.id) === decoded) return true;
+    if (course.slug.toLowerCase() === decoded || course.slug.toLowerCase() === normalized) return true;
+    const courseTitleNormalized = course.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+    if (courseTitleNormalized === normalized) return true;
+    return false;
+  });
+}

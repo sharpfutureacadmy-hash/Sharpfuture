@@ -221,7 +221,7 @@ export function Course() {
                   }}
                   onClick={() => {
                     if (isCenter) {
-                      router.push(`/course/${course.id}`);
+                      router.push(`/course/${course.slug || course.id}`);
                     } else {
                       setIsTransitioning(true);
                       setCourseIndex(baseIndex);

@@ -6,6 +6,7 @@ import { SITE_CONFIG } from "./seo-keywords";
 
 export function generateCourseSchema(course: {
   id: number;
+  slug?: string;
   title: string;
   description: string;
   duration: string;
@@ -14,7 +15,7 @@ export function generateCourseSchema(course: {
   image: string;
   overview?: string;
 }) {
-  const courseUrl = `${SITE_CONFIG.url}/course/${course.id}`;
+  const courseUrl = `${SITE_CONFIG.url}/course/${course.slug || course.id}`;
   const imageUrl = course.image.startsWith("http")
     ? course.image
     : `${SITE_CONFIG.url}${course.image.startsWith("/") ? "" : "/"}${course.image}`;

@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { SITE_CONFIG } from "@/lib/seo-keywords"
 
+<meta name="google-site-verification" content="6xRsME6NjobMD35ohWYM4NNwJpwp7iXV_bWqB-52KjI" />
 export const metadata: Metadata = {
   title: "Privacy Policy | Sharp Future Academy",
   description:

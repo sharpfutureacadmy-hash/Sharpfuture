@@ -21,7 +21,7 @@ export async function GET() {
 
   // Generate course URLs
   const courseUrls = courseData.map((course) => ({
-    url: `${baseUrl}/course/${course.id}`,
+    url: `${baseUrl}/course/${course.slug}`,
     lastModified: new Date().toISOString().split("T")[0],
     changeFrequency: "weekly",
     priority: 0.9,
