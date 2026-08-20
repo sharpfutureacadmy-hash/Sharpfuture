@@ -18,7 +18,7 @@ export const SEO_KEYWORDS = [
   "digital photography course Muzaffarpur",
   "game design course Bihar",
   "game art and design training",
-  "fashion design course Muzaffarpur",
+  "Graphics animation course Muzaffarpur",
   "interior design course Muzaffarpur",
   "CAD architectural modeling course Muzaffarpur",
 

@@ -1,8 +1,4 @@
 {
-  "/sitemap.xml/route": "app/sitemap.xml/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
-  "/privacy-policy/page": "app/privacy-policy/page.js",
-  "/terms/page": "app/terms/page.js",
   "/course/[slug]/page": "app/course/[slug]/page.js"
 }
